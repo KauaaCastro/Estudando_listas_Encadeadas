@@ -17,16 +17,17 @@ public class Menu {
 
         int selected = 0;
         int reset = 0;
+
         while (reset == 0) {
             System.out.println(clear);
             System.out.println(ANSI_BLUE + "\n        Menu atividade sobre lista encadeada         " + ANSI_RESET);
             System.out.println("--------------------------------------");
             System.out.println();
-            System.out.println(ANSI_CYAN + "1." + ANSI_RESET + "Exibir tamanho");
+            System.out.println(ANSI_CYAN + "1." + ANSI_RESET + "Exibir lista");
             System.out.println(ANSI_CYAN + "2." + ANSI_RESET + "Soma dos valores armazenados");
             System.out.println(ANSI_CYAN + "3." + ANSI_RESET + "Exibir o maior valor armazenado na lista");
             System.out.println(ANSI_CYAN + "4." + ANSI_RESET + "Exibir o menor valor armazenado na lista");
-            System.out.println(ANSI_CYAN + "5." + ANSI_RESET + "Exibir o dobro dos valores armazenados na lista");
+            System.out.println(ANSI_CYAN + "5." + ANSI_RESET + "Dobrar valores armazenados na lista");
             System.out.println(ANSI_CYAN + "6." + ANSI_RESET + "Adicionar valor ao inicio da lista");
             System.out.println(ANSI_CYAN + "7." + ANSI_RESET + "Soma dos valores nas casas impares");
             System.out.println(ANSI_CYAN + "8." + ANSI_RESET + "Soma dos valores nas casas pares");
@@ -53,63 +54,65 @@ public class Menu {
                 System.out.println(ANSI_RED + "Redirecionando até a tabela" + ANSI_RESET);
 
                 Thread.sleep(1500);
-                reset = 0;
+                selected = 0;
             }
 
             switch (selected) {
                 case 1:
-                    lista.length(); // Funcionando
+                    System.out.println("A lista possui " + lista.length() + " nós!");
+                    System.out.print("Valores da lista (do nó 0 ao " + (lista.length() - 1) + "): ");
+                    lista.exibirLista();
                     break;
 
                 case 2:
                     System.out.println("Soma dos elementos (total): " + lista.total());
-                    lista.exibirLista(); // Funcionando
+                    lista.exibirLista();
                     break;
 
                 case 3:
                     System.out.println("Maior elemento: " + lista.max());
-                    break; // Funcionando
+                    break;
 
                 case 4:
                     System.out.println("Menor elemento: " + lista.min());
-                    break; // Corrigido e pronto para teste
+                    break;
 
                 case 5:
                     System.out.println(clear);
-                    lista.doubleX();
-                    break; // Funcionando
+                    lista.doubleX(); // duplica permanentemente
+                    break;
 
                 case 6:
                     System.out.print("Digite o número para adicionar: ");
                     lista.number = sc.nextInt();
                     lista.addinicio(lista.number);
-                    break; // Funcionando
+                    break;
 
                 case 7:
                     lista.somaPosImpares();
                     System.out.println(lista.somaPosImpares());
-                    break; // Funcionando
+                    break;
 
                 case 8:
                     System.out.println(clear);
                     lista.posPares();
-                    break; // Funcionando
+                    break;
 
                 case 9:
                     System.out.print("Digite a posiçao: ");
                     lista.position = sc.nextInt();
                     lista.pos(lista.position, lista.quantity);
-                    break; // Funcionando
+                    break;
 
                 case 10:
                     System.out.print("Digite a posiçao para remover: ");
                     int position = sc.nextInt();
                     lista.posRemove(position, lista.quantity);
-                    break; // Funcionando
+                    break;
 
                 case 11:
                     lista.deletedNumber();
-                    break; // Funcionando
+                    break;
 
                 case 12:
                     System.out.println(clear);
@@ -118,7 +121,7 @@ public class Menu {
                     System.out.print("Digite o valor a ser inserido: ");
                     int valor = sc.nextInt();
                     lista.inserePos(newPosition, valor);
-                    break; // Funcionando
+                    break;
 
                 case 0:
                     System.out.println("Tem certeza de que deseja sair?" + ANSI_RED + "(s/n)");
@@ -140,6 +143,7 @@ public class Menu {
                     System.out.println();
                     System.out.println("Opçao inválida!");
             }
+
             System.out.println();
             System.out.println("Pressione " + ANSI_RED + "enter " + ANSI_RESET + "para que possamos retornar ao menu:");
             sc.nextLine();

@@ -32,7 +32,7 @@ public class Lista {
     }
 
     // Exercicio 1
-    public void length() {
+    public int length() {
         int count = 0;
         Node current = this.head;
 
@@ -40,7 +40,7 @@ public class Lista {
             count++;
             current = current.getNext();
         }
-        System.out.println("A lista possui " + count + " Nós!");
+        return count;
     }
 
     // Exercicio 2
@@ -142,14 +142,13 @@ public class Lista {
         Node current = this.head;
         int count = 0;
 
-        if (position > quantity) {
+        if (position >= length()) {
             System.out.println("A posiçao inserida nao existe! ");
             System.out.println("Posiçao inseria: " + position);
-            System.out.println("Quantidade de nós existentes: " + quantity);
-
+            System.out.println("Quantidade de nós existentes: " + length() + " Considerando o nó 0");
         }
 
-        if (position < quantity) {
+        if (position < length()) {
             while (current != null) {
                 if (count == position) {
                     System.out.println(current.getNumber());
@@ -182,13 +181,13 @@ public class Lista {
         }
 
         try {
-            if (quantity < position) {
+            if (length() <= position) {
                 System.out.println("A posiçao inserida nao existe! ");
                 System.out.println("Posiçao inseria: " + position);
-                System.out.println("Quantidade de nós existentes: " + quantity);
+                System.out.println("Quantidade de nós existentes: " + length());
             }
 
-            if (quantity > position) {
+            if (length() > position) {
                 while (current != null) {
                     if (count == position - 1) {
                         lastRemoved = current.getNext();
@@ -273,6 +272,8 @@ public class Lista {
         }
         System.out.println();
     }
+
+    // Extras
 
     public Node getHead() {
         return head;
