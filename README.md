@@ -33,25 +33,10 @@ Uma **lista encadeada** é uma estrutura de dados dinâmica composta por nós qu
 - Acesso sequencial (sem índice direto como arrays)
 
 ### Aplicações:
-- Implementação de filas, pilhas e grafos
+- Implementação de filas
 - Sistemas que precisam de gerenciamento dinâmico de memória
 - Softwares que realizam muitas inserções e remoções em tempo de execução
 
-## 🚧 Melhorias Futuras
 
-Ainda há ajustes a serem feitos para otimizar o código e torná-lo mais robusto:
 
-- Melhor tratamento de erros e exceções
-- Implementação de uma versão com **lista duplamente encadeada**
-- Adição de testes automatizados
-- Modularização de trechos repetitivos
-- Remoção de declarações não utilizadas
-- Refatoração de métodos para melhor legibilidade
-
----
-
-Este repositório está em constante evolução como parte do aprendizado em estruturas de dados e Java. Contribuições e sugestões são bem-vindas!
-
-## 📎 Licença
-
-Este projeto é de uso educacional. Sinta-se livre para estudar, modificar e reutilizar.
+Este repositório está em constante evolução como parte do aprendizado em estruturas de dados e Java. 
